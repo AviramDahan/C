@@ -1,0 +1,35 @@
+void XmY(double, double, double&);
+int main() {
+	double x;
+	double y;
+	cout << "Please enter X num" << endl;
+	cin >> x;
+	cout << "Please enter Y num" << endl;
+	cin >> y;
+	double sum;
+	XmY(x,y,sum);
+	return 0;
+}
+void XmY(double x, double y , double& sum) {
+	if (y > 0) {
+		int TempY = y;
+		sum = x;
+		TempY--;
+
+		while (TempY > 0) {
+			sum = sum * x;
+			TempY--;
+		}
+		cout << sum;
+	}
+
+	if (y == 0) { // אם אני לא ייצור טמפ ווי הוא יכנס גם לאיפ הזה
+		sum = 1;
+		cout << sum;
+	}
+	if (y < 0) {
+		y = y * -1;
+		sum = y / x;
+		cout << sum;
+	}
+}
